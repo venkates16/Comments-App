@@ -1,0 +1,89 @@
+.amber {
+  background-color: #f59e0b;
+}
+.color {
+  color: #0b69ff;
+}
+
+.blue {
+  background-color: #0b69ff;
+}
+
+.orange {
+  background-color: #f97316;
+}
+
+.emerald {
+  background-color: #10b981;
+}
+
+.teal {
+  background-color: #14b8a6;
+}
+
+.red {
+  background-color: #b91c1c;
+}
+
+.light-blue {
+  background-color: #0ea5e9;
+}
+
+/* Write your CSS here */
+.likedtext {
+  margin-left: 12px;
+}
+
+li {
+  list-style: none;
+}
+#buttonImg {
+  width: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.initalName {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 100%;
+}
+
+.nameGroup {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.date {
+  padding-top: 8px;
+}
+.name {
+  font-size: 20px;
+  margin-right: 20px;
+  padding-top: 5px;
+}
+
+.commentUser {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+
+  text-indent: 80px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.likeCard {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.like {
+  display: flex;
+}
+
+.imgLike {
+  margin-right: 12px;
+}

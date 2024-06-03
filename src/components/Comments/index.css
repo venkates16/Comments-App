@@ -1,0 +1,89 @@
+/* Write your CSS here */
+.img {
+  width: 40vw;
+}
+.Outercontainer {
+  padding: 22px;
+  background-color: #d1d8c5;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .screenBlock {
+    display: none;
+  }
+}
+.horizontal {
+  margin-top: 22px;
+  border: 1px solid rgb(211, 167, 73);
+}
+
+@media screen and (max-width: 767px) {
+  .BlockLeft {
+    display: none;
+  }
+}
+
+.card {
+  width: 45vw;
+}
+
+.comment {
+  font-size: 45px;
+  font-style: oblique;
+  margin-bottom: 10px;
+}
+
+.aboutTec {
+  font-size: 25px;
+}
+
+input,
+textarea {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  border: 1px solid rgb(160, 150, 150);
+  outline: none;
+  padding: 10px;
+}
+.button1 {
+  background-color: rgb(132, 149, 206);
+  padding: 10px;
+  outline: none;
+  border: 2px solid gainsboro;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  form {
+    width: 50vw;
+  }
+  img {
+    width: 35vw;
+    align-self: flex-end;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.count {
+  background-color: aqua;
+  padding: 5px;
+  margin-right: 12px;
+}
+.comCount {
+  margin-top: 20px;
+}
+
+ul {
+  margin-top: 32px;
+  padding-left: 10px;
+}
