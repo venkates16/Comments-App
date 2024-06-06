@@ -1,8 +1,7 @@
 // Write your code here
 import './index.css'
+
 import {formatDistanceToNow} from 'date-fns'
-
-
 
 const initialContainerBackgroundClassNames = [
   'amber',
@@ -14,12 +13,12 @@ const initialContainerBackgroundClassNames = [
   'light-blue',
 ]
 
-let color = 'color'
-let ListItems = props => {
-  let {toggleLike, objectItem, deleteItem} = props
-  let {name, yourComment, id, isFavorite} = objectItem
+const color = 'color'
+const ListItems = props => {
+  const {toggleLike, objectItem, deleteItem} = props
+  const {name, yourComment, id, isFavorite} = objectItem
   console.log(formatDistanceToNow(new Date()))
-  let isActive = isFavorite
+  const isActive = isFavorite
     ? 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
     : 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
 
@@ -46,11 +45,7 @@ let ListItems = props => {
           <div>
             <img id="buttonImg" alt="like" src={isActive} />
           </div>
-          <button
-            onClick={click}
-            className="likedtext"
-            className={{isActive} ? color : {undefined}}
-          >
+          <button onClick={click} className="likedtext" type="button">
             Like
           </button>
         </div>

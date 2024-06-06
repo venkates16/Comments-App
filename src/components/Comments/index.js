@@ -3,8 +3,6 @@ import {Component} from 'react'
 import {v4 as uuidv4} from 'uuid'
 import ListItems from '../CommentItem'
 
-
-
 const initialContainerBackgroundClassNames = [
   'amber',
   'blue',
@@ -23,15 +21,14 @@ class Comments extends Component {
     dataList: [],
     count: 0,
     name: '',
-
     yourComment: '',
   }
 
   submitClick = event => {
     event.preventDefault()
-    let {count, name, yourComment} = this.state
+    const {name, yourComment} = this.state
 
-    let obj = {
+    const obj = {
       id: uuidv4(),
       name,
       yourComment,
@@ -39,14 +36,12 @@ class Comments extends Component {
     }
 
     console.log(obj)
-    this.setState(previous => {
-      return {
-        count: previous.count + 1,
-        dataList: [...previous.dataList, obj],
-        name: '',
-        yourComment: '',
-      }
-    })
+    this.setState(previous => ({
+      count: previous.count + 1,
+      dataList: [...previous.dataList, obj],
+      name: '',
+      yourComment: '',
+    }))
   }
 
   nameChange = event => {
@@ -56,31 +51,23 @@ class Comments extends Component {
   commentChange = event => {
     this.setState({yourComment: event.target.value})
   }
-  toggleLike = props => {
-    //console.log(props)
 
-    this.setState(previous => {
-      return {
-        dataList: previous.dataList.map(each => {
-          if (props === each.id) {
-            return {...each, isFavorite: !each.isFavorite}
-          }
-          return each
-        }),
-      }
-    })
+  toggleLike = props => {
+    this.setState(previous => ({
+      dataList: previous.dataList.map(each => {
+        if (props === each.id) {
+          return {...each, isFavorite: !each.isFavorite}
+        }
+        return each
+      }),
+    }))
   }
 
   deleteItem = props => {
-    //console.log(props)
-    this.setState(each => {
-      return {
-        count: each.count - 1,
-        dataList: each.dataList.filter(item => {
-          return item.id !== props
-        }),
-      }
-    })
+    this.setState(each => ({
+      count: each.count - 1,
+      dataList: each.dataList.filter(item => item.id !== props),
+    }))
   }
 
   render() {
@@ -106,16 +93,19 @@ class Comments extends Component {
                 value={name}
                 onChange={this.nameChange}
               />
+
               <textarea
                 value={yourComment}
                 rows="6"
                 cols="6"
                 onChange={this.commentChange}
                 placeholder="Your Comment"
-              ></textarea>
+              />
 
               <div>
-                <button className="button1">Add comment</button>
+                <button className="button1" type="button">
+                  Add comment
+                </button>
               </div>
             </form>
           </div>
@@ -131,17 +121,15 @@ class Comments extends Component {
           Comments
         </p>
         <ul>
-          {dataList.map(each => {
-            return (
-              <ListItems
-                objectItem={each}
-                toggleLike={this.toggleLike}
-                key={each.id}
-                deleteItem={this.deleteItem}
-                decreseCount={this.decreseCount}
-              />
-            )
-          })}
+          {dataList.map(each => (
+            <ListItems
+              objectItem={each}
+              toggleLike={this.toggleLike}
+              key={each.id}
+              deleteItem={this.deleteItem}
+              decreseCount={this.decreseCount}
+            />
+          ))}
         </ul>
       </div>
     )
